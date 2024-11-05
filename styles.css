@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-size: cover;
+    background-color: rgb(0, 24, 48);
+    font-family: cursive;
+}
+
+.nav {
+    box-shadow: 3px 3px 5px transparent;
+    padding-top: 30px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+h3 {
+    color: white;
+    font-size: 24px;
+    margin-left: 20px;
+    display: flex;
+}
+
+.top-nav li {
+    height: 50px;
+}
+
+.top-nav ul a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    transition: transform 0.3s;
+}
+
+.top-nav a {
+    text-align: center;
+    display: flex;
+}
+
+.top-nav li a:hover {
+    background-color: transparent;
+    transform: scale(1.2);
+    color: white;
+}
+
+.hamburgur {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}
+
+.hamburgur i {
+    font-size: 28px;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: calc(100vh - 80px); /* Adjust this value to move content up or down */
+    padding: 20px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: antiquewhite;
+    margin-left: 40px; /* Adjust the horizontal position of the hero section */
+}
+#btn{
+    background-color: rgb(250, 106, 58);
+    border-radius: 50px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.ani {
+    width: 200px;
+    height: 200px;
+    background-color: coral;
+    -webkit-animation: circletoSquare 10s 0s infinite alternate;
+    margin-right: 40px; /* Adjust the space between the animation and the hero section */
+    margin-top: -100px;
+}
+
+@-webkit-keyframes circletoSquare {
+    0% {
+        border-radius: 75% 25% 25% 75%;
+        background: rgb(255, 105, 56);
+        transform: rotate(10deg);
+    }
+    25% {
+        border-radius: 50% 0 0 0;
+        background: rgb(252, 146, 111);
+        transform: rotate(45deg);
+    }
+    50% {
+        border-radius: 50% 50% 0 0;
+        background: indianred;
+        transform: rotate(90deg);
+    }
+    100% {
+        border-radius: 75% 25% 25% 75%;
+        background: rgb(243, 118, 23);
+        transform: rotate(10deg);
+    }
+}
+
+@media (max-width: 768px) {
+   
+    .top-nav ul {
+        flex-direction: column;
+        width: 200px;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        background-color: rgba(1, 10, 19, 0.9);
+        transition: left 1s ease-in-out;
+        justify-content: flex-start;
+        text-align: right;
+        z-index: 99;
+    }
+
+    .top-nav ul.show {
+        left: 0;
+    }
+
+    .top-nav ul li {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .top-nav ul li a {
+        font-size: 18px;
+    }
+
+    .hamburgur {
+        display: block;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .ani {
+        
+        margin-top: 20px;
+        height: 120px;
+        width: 120px;
+    }
+
+    .hero {
+        padding: 10px;
+        font-size: 14px;
+        
+        margin-top: 90px;
+
+        justify-content: center;
+    }
+}
